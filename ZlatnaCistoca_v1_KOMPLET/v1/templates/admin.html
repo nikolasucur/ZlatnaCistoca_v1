@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Admin</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Admin panel</h1>
+<p><a href="/excel">Preuzmi Excel</a></p>
+
+<table border="1">
+<tr>
+<th>ID</th><th>Ime</th><th>Email</th><th>Telefon</th><th>Status</th><th>Datum</th>
+</tr>
+{% for z in zahtevi %}
+<tr>
+<td>{{ z[0] }}</td>
+<td>{{ z[1] }}</td>
+<td>{{ z[2] }}</td>
+<td>{{ z[3] }}</td>
+<td>{{ z[5] }}</td>
+<td>{{ z[6] }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zlatna Čistoća</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Zlatna Čistoća</h1>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<p class="success">{{ messages[0] }}</p>
+{% endif %}
+{% endwith %}
+
+<form action="/posalji" method="post">
+<input name="ime" placeholder="Ime i prezime" required>
+<input name="email" placeholder="Email" required>
+<input name="telefon" placeholder="Telefon" required>
+<textarea name="opis" placeholder="Opis zahteva"></textarea>
+<button type="submit">Pošalji zahtev</button>
+</form>
+
+<p><a href="/admin">Admin panel</a></p>
+</div>
+</body>
+</html>
