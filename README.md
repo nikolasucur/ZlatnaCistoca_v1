@@ -1,4 +1,3 @@
-[github_readme.md](https://github.com/user-attachments/files/34490716/github_readme.md)
 # ♻️ Zlatna Čistoća (v1)
 
 > Moderan web sistem za komunalna preduzeća i operatere upravljanja otpadom, kreiran sa ciljem digitalizacije evidencije reciklaže i terenskog odvoza.
@@ -18,22 +17,35 @@ Prva verzija (**V1**) fokusirana je na stabilan backend, jednostavnost korišće
 
 ---
 
+## 📸 Prikaz aplikacije
+
+### Admin Dashboard i Statistika
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### Unos novog odvoza sa terena
+![Forma za unos](screenshots/form-input.png)
+
+### Automatski generisan Excel izveštaj
+![Excel Izveštaj](screenshots/excel-report.png)
+
+---
+
 ## ✨ Ključne funkcionalnosti (V1)
 
-*   **📝 Interaktivni unos sa terena:** Intuitivne web forme za evidentiranje datuma, rejona, vrste otpada (PET, papir, staklo, metal, komunalni otpad) i količine u kilogramima.
-*   **🛡️ Robustna validacija i obaveštenja:** Zaštita od pogrešnih unosa uz vizuelne povratne informacije (flash poruke) za korisnika.
-*   **🗄️ Relaciona baza podataka:** Pouzdano skladištenje podataka u lokalnoj **SQLite** bazi sa automatskom inicijalizacijom.
-*   **📊 Profesionalni Excel Export:** Generisanje uredno formatiranih Excel izveštaja jednim klikom, sa prilagođenim zaglavljima, automatskim širinama kolona i sračunatim ukupnim količinama (sumarnom linijom).
-*   **📈 Admin Dashboard:** Centralni pregled istorije odvoza, ukupnog broja unosa i ukupne mase odvezenog otpada.
+* **📝 Interaktivni unos sa terena:** Intuitivne web forme za evidentiranje datuma, rejona, vrste otpada (PET, papir, staklo, metal, komunalni otpad) i količine u kilogramima.
+* **🛡️ Robustna validacija i obaveštenja:** Zaštita od pogrešnih unosa uz vizuelne povratne informacije (flash poruke) za korisnika.
+* **🗄️ Relaciona baza podataka:** Pouzdano skladištenje podataka u lokalnoj **SQLite** bazi sa automatskom inicijalizacijom.
+* **📊 Profesionalni Excel Export:** Generisanje uredno formatiranih Excel izveštaja jednim klikom, sa prilagođenim zaglavljima, automatskim širinama kolona i sračunatim ukupnim količinama (sumarnom linijom).
+* **📈 Admin Dashboard:** Centralni pregled istorije odvoza, ukupnog broja unosa i ukupne mase odvezenog otpada.
 
 ---
 
 ## 🛠️ Korišćene tehnologije
 
-*   **Backend:** Python, Flask
-*   **Baza podataka:** SQLite3
-*   **Obrada i izvoz podataka:** OpenPyXL
-*   **Frontend:** HTML5, CSS3 (Responsive dizajn)
+* **Backend:** Python, Flask
+* **Baza podataka:** SQLite3
+* **Obrada i izvoz podataka:** OpenPyXL
+* **Frontend:** HTML5, CSS3 (Responsive dizajn)
 
 ---
 
