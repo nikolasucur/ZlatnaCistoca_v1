@@ -1,124 +1,66 @@
-[README.md](https://github.com/user-attachments/files/34490642/README.md)
-# 🟢 Zlatna Čistoća – v1.0
+[github_readme.md](https://github.com/user-attachments/files/34490716/github_readme.md)
+# ♻️ Zlatna Čistoća (v1)
 
-> **Web aplikacija za komunalna preduzeća** – prijem zahteva građana, upravljanje evidencijom i Excel izvoz podataka.
+> Moderan web sistem za komunalna preduzeća i operatere upravljanja otpadom, kreiran sa ciljem digitalizacije evidencije reciklaže i terenskog odvoza.
 
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Flask](https://img.shields.io/badge/Flask-2.x%2B-lightgrey)
-![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)
+[![Flask](https://img.shields.io/badge/Flask-Framework-black.svg)](https://flask.palletsprojects.com/)
+[![SQLite](https://img.shields.io/badge/Database-SQLite-blue.svg)](https://www.sqlite.org/)
+[![openpyxl](https://img.shields.io/badge/Export-Excel%20openpyxl-green.svg)](https://openpyxl.readthedocs.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 📋 O projektu
 
-**Zlatna Čistoća v1** je prva verzija poslovnog softvera namenjenog komunalnim preduzećima i servisima za odvoz i reciklažu otpada.
+**Zlatna Čistoća** je namensko softversko rešenje prilagođeno potrebama komunalnih preduzeća i privatnih operatera za sakupljanje i reciklažu otpada. Aplikacija premošćuje jaz između terenskih podataka i administrativne obrade, obezbeđujući pouzdano čuvanje podataka, sigurne forme za unos i brzu generaciju zvaničnih izveštaja.
 
-### Funkcionalnosti:
-- 📝 **Online forma** za podnošenje zahteva građana (ime, email, telefon, opis)
-- 🗄️ **SQLite baza podataka** – automatsko čuvanje svih zahteva
-- 🖥️ **Admin panel** – pregled svih pristiglih zahteva
-- 📊 **Excel izvoz** – preuzimanje kompletne evidencije u `.xlsx` formatu
-- ⚡ Flash notifikacije o uspešnom slanju zahteva
+Prva verzija (**V1**) fokusirana je na stabilan backend, jednostavnost korišćenja bez obuke zaposlenih i trenutni izvoz podataka u tabelarni format.
 
 ---
 
-## 🛠️ Tehnologije
+## ✨ Ključne funkcionalnosti (V1)
 
-| Tehnologija | Uloga |
-|---|---|
-| Python 3 | Backend jezik |
-| Flask | Web framework |
-| SQLite | Baza podataka |
-| openpyxl | Excel generisanje |
-| HTML/CSS | Frontend |
+*   **📝 Interaktivni unos sa terena:** Intuitivne web forme za evidentiranje datuma, rejona, vrste otpada (PET, papir, staklo, metal, komunalni otpad) i količine u kilogramima.
+*   **🛡️ Robustna validacija i obaveštenja:** Zaštita od pogrešnih unosa uz vizuelne povratne informacije (flash poruke) za korisnika.
+*   **🗄️ Relaciona baza podataka:** Pouzdano skladištenje podataka u lokalnoj **SQLite** bazi sa automatskom inicijalizacijom.
+*   **📊 Profesionalni Excel Export:** Generisanje uredno formatiranih Excel izveštaja jednim klikom, sa prilagođenim zaglavljima, automatskim širinama kolona i sračunatim ukupnim količinama (sumarnom linijom).
+*   **📈 Admin Dashboard:** Centralni pregled istorije odvoza, ukupnog broja unosa i ukupne mase odvezenog otpada.
 
 ---
 
-## 🚀 Pokretanje projekta
+## 🛠️ Korišćene tehnologije
 
-### Preduslovi
-- Python 3.8+
-- pip
-
-### Instalacija
-
-```bash
-# 1. Kloniraj repozitorijum
-git clone https://github.com/tvoj-username/zlatna-cistoca-v1.git
-cd zlatna-cistoca-v1
-
-# 2. Instaliraj zavisnosti
-pip install -r requirements.txt
-
-# 3. Pokreni aplikaciju
-python app.py
-```
-
-### Pristup aplikaciji
-- **Korisnički interfejs:** http://127.0.0.1:5000
-- **Admin panel:** http://127.0.0.1:5000/admin
-- **Excel izvoz:** http://127.0.0.1:5000/excel
+*   **Backend:** Python, Flask
+*   **Baza podataka:** SQLite3
+*   **Obrada i izvoz podataka:** OpenPyXL
+*   **Frontend:** HTML5, CSS3 (Responsive dizajn)
 
 ---
 
-## 📁 Struktura projekta
+## 🚀 Pokretanje projekta (Installation)
 
-```
-zlatna_cistoca_v1/
-│
-├── app.py                  # Glavni Flask server
-├── requirements.txt        # Python zavisnosti
-├── zlatna_cistoca.db       # SQLite baza (auto-generiše se)
-│
-├── templates/
-│   ├── index.html          # Korisnička stranica sa formom
-│   └── admin.html          # Admin panel
-│
-└── static/
-    └── css/
-        └── style.css       # Stilovi
-```
+Slede koraci za brzo lokalno pokretanje aplikacije u razvojne svrhe:
 
----
-
-## 💼 Kupovina licence
-
-Ova aplikacija je **komercijalni softver** u razvoju.  
-Kod je javno dostupan isključivo u svrhu **evaluacije i prezentacije**.
-
-Za kupovinu licence ili prilagođavanje vašim potrebama:
-
-📧 **rfs.srbija@gmail.com**
+1. Klonirajte repozitorijum:
+   ```bash
+   git clone https://github.com/nikolasucur/ZlatnaCistoca_v1.git
+   ```
+2. Idite u direktorijum projekta:
+   ```bash
+   cd ZlatnaCistoca_v1
+   ```
+3. Instalirajte potrebne zavisnosti:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Pokrenite aplikaciju:
+   ```bash
+   python app.py
+   ```
+5. Otvorite pretraživač i posetite: `http://127.0.0.1:5000`
 
 ---
 
-## 🤝 Saradnja na razvoju
+## 📄 Licenca
 
-Tražimo developere koji žele da doprinesu razvoju projekta!
-
-Ako si zainteresovan/a za saradnju:
-1. Pogledaj otvorene zadatke u [Issues](../../issues) tabu
-2. Pročitaj [CONTRIBUTING.md](CONTRIBUTING.md)
-3. Javi se na **rfs.srbija@gmail.com**
-
----
-
-## 🗺️ Roadmap
-
-- [x] Osnovna forma za zahteve
-- [x] SQLite baza podataka
-- [x] Admin panel
-- [x] Excel izvoz
-- [ ] Autentifikacija za admin panel
-- [ ] Email notifikacije
-- [ ] Mobilni dizajn (responsive)
-- [ ] REST API
-- [ ] Prebacivanje na PostgreSQL
-
----
-
-## ⚖️ Licenca
-
-Copyright © 2026 RFS Srbija | rfs.srbija@gmail.com  
-Sva prava zadržana. Pogledaj [LICENSE](LICENSE) fajl za detalje.
+Projekat je razvijen kao vlasničko rešenje / portfolio prezentacija.
