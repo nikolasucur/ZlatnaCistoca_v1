@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zlatna Čistoća - Evidencija Odvoza Otpada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>♻️ Zlatna Čistoća</h1>
+            <p>Sistem za evidenciju reciklaže i komunalnog otpada</p>
+            <nav>
+                <a href="{{ url_for('index') }}" class="btn active">Novi unos</a>
+                <a href="{{ url_for('admin') }}" class="btn secondary">Admin Dashboard</a>
+            </nav>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <main class="card">
+            <h2>Unos novog odvoza / sakupljanja</h2>
+            <form action="{{ url_for('dodaj_unos') }}" method="POST" class="form">
+                <div class="form-group">
+                    <label for="datum">Datum odvoza *</label>
+                    <input type="date" id="datum" name="datum" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rejon">Rejon / Lokacija *</label>
+                    <input type="text" id="rejon" name="rejon" placeholder="npr. Rejon 1 - Centar" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="vrsta_otpada">Vrsta otpada *</label>
+                    <select id="vrsta_otpada" name="vrsta_otpada" required>
+                        <option value="" disabled selected>Izaberite vrstu otpada</option>
+                        <option value="PET ambalaža">PET ambalaža</option>
+                        <option value="Papir i karton">Papir i karton</option>
+                        <option value="Staklo">Staklo</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Komunalni otpad">Komunalni otpad</option>
+                        <option value="Biorazgradivi otpad">Biorazgradivi otpad</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="kolicina_kg">Količina (kg) *</label>
+                    <input type="number" step="0.01" min="0.1" id="kolicina_kg" name="kolicina_kg" placeholder="npr. 250.50" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="napomena">Napomena (opciono)</label>
+                    <textarea id="napomena" name="napomena" rows="3" placeholder="Dodatne napomene sa terena..."></textarea>
+                </div>
+
+                <button type="submit" class="btn primary-btn">Sačuvaj unos</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <p>Zlatna Čistoća v1.0 | Rešenje za komunalna preduzeća</p>
+        </footer>
+    </div>
+
+    <script>
+        // Postavi današnji datum kao podrazumevani
+        document.getElementById('datum').valueAsDate = new Date();
+    </script>
+</body>
+</html>

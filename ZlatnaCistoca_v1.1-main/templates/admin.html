@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Zlatna Čistoća</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>♻️ Zlatna Čistoća - Admin Panel</h1>
+            <p>Pregled evidencije i generisanje zvaničnih izveštaja</p>
+            <nav>
+                <a href="{{ url_for('index') }}" class="btn secondary">Novi unos</a>
+                <a href="{{ url_for('admin') }}" class="btn active">Admin Dashboard</a>
+            </nav>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Ukupno unosa</h3>
+                <p class="stat-value">{{ total_unosa }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Ukupno odvezeno (kg)</h3>
+                <p class="stat-value">{{ "%.2f"|format(total_kg) }} kg</p>
+            </div>
+        </section>
+
+        <main class="card">
+            <div class="card-header">
+                <h2>Istorija odvoza</h2>
+                <a href="{{ url_for('export_excel') }}" class="btn excel-btn">📊 Izvezi u Excel (.xlsx)</a>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Rejon</th>
+                            <th>Vrsta otpada</th>
+                            <th>Količina (kg)</th>
+                            <th>Napomena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for unos in unosi %}
+                        <tr>
+                            <td>{{ unos.datum }}</td>
+                            <td><strong>{{ unos.rejon }}</strong></td>
+                            <td><span class="badge">{{ unos.vrsta_otpada }}</span></td>
+                            <td class="text-right">{{ "%.2f"|format(unos.kolicina_kg) }} kg</td>
+                            <td>{{ unos.napomena or '-' }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">Trenutno nema zabeleženih unosa u bazi.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Zlatna Čistoća v1.0 | Softversko rešenje za upravljanje otpadom</p>
+        </footer>
+    </div>
+</body>
+</html>
