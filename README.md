@@ -1,4 +1,4 @@
-# ♻️ Zlatna Čistoća (v1)
+# ♻️ Zlatna Čistoća (v1.1)
 
 > Moderan web sistem za komunalna preduzeća i operatere upravljanja otpadom, kreiran sa ciljem digitalizacije evidencije reciklaže i terenskog odvoza.
 
